@@ -47,3 +47,14 @@ Test your new function; I've provided some basic testing code in `code.test.js`.
 What is the worst-case asymptotic time complexity of your implementation? What
 is the worst-case asymptotic memory complexity? Add your answer, including your
 reasoning, to this markdown file.
+
+
+
+### Time Complexity:
+
+The "heldKarp" worst case time complexity depends on memoization cache. With trying every possible order of cities would take a long time, may be like $n!$ . however with use of memoization, we can significatly reduce the number of possibilities we need to check. So we consider all possible subsets of cities, to memoization. With $n$ times to cover all possible cities, making a runtime of $O(n * 2^n)$ . But creating "newCities" takes $n$ time and needs to be done for each unique subset. So overall complexity becomes $O(n^2 * 2^n)$ . 
+
+### Memory Complexity:
+
+The memory complexity is $\Theta(n⋅2^n)$ due to memoization. The cache stores the results for different subsets of cities and their starting points. Since there are $2^n$ possible subsets, and each subset can have $n$ different starting points, the cache can grow up to $\Theta(n * 2^n)$ in size.
+
