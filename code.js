@@ -2,7 +2,6 @@ function tsp_hk(distance_matrix) {
     if (distance_matrix.length <= 1) {
         return 0;
     }
-    
     // Resets cache every time the function is called
     let cache = {};
 
@@ -20,7 +19,7 @@ function tsp_hk(distance_matrix) {
 }
 
 function heldKarp(dm, start, cities, cache) {
-    let key = JSON.stringify([cities, start]);
+    let key = JSON.stringify([cities.slice().sort(), start]); 
 
     // Check if already in the cache
     if (cache[key] !== undefined) {
@@ -48,6 +47,7 @@ function heldKarp(dm, start, cities, cache) {
         return minimum;
     }
 }
+
 
 
 /*
